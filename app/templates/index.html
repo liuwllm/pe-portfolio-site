@@ -37,13 +37,32 @@
         <h1>MLH Fellow</h1>
     </div>
 
-    <div class="about-me">
-        <h1>About Me</h1>
-        <p>Hi, I&apos;m William! I&apos;m currently dual majoring in Computer Science and Business @ <span className="text-borealis">Western University</span>.</p>
-        <p>
-            I&apos;m always trying to work on creating a new project or learning something new. 
-            Some of the things I&apos;ve been doing include <span className="text-borealis">language learning</span> &#x1F1EF;&#x1F1F5; (learning Japanese right now), <span className="text-borealis">graphic design</span> &#x1F3A8;, <span className="text-borealis">drawing</span> &#x1F58D;&#xFE0F;, and <span className="text-borealis">gaming</span> &#x1F3AE; (8:35 speedrunning PB for Hades II!).
-        </p>
+    <div class="content">
+        <div class="about-me">
+            <h1>About Me</h1>
+            <p>Hi, I&apos;m William! I&apos;m currently dual majoring in Computer Science and Business @ <span className="text-borealis">Western University</span>.</p>
+            <p>
+                I&apos;m always trying to work on creating a new project or learning something new. 
+                Some of the things I&apos;ve been doing include <span className="text-borealis">language learning</span> &#x1F1EF;&#x1F1F5; (learning Japanese right now), <span className="text-borealis">graphic design</span> &#x1F3A8;, <span className="text-borealis">drawing</span> &#x1F58D;&#xFE0F;, and <span className="text-borealis">gaming</span> &#x1F3AE; (8:35 speedrunning PB for Hades II!).
+            </p>
+        </div>
+
+        <div class="work-experience">
+            <h1>Work Experience</h1>
+            {% for job in work_experience %}
+                <div class="job-entry">
+                    <div class="job-picture">
+                        <img src="static/img/{{job.picture}}" alt={{ job.company }} height="200" width="200"/>
+                    </div>
+                    <div class="job-info">
+                        <h2>{{ job.title }}</h2>
+                        <h3>{{ job.company}} </h3>
+                        <h4>{{ job.date }}</h4>
+                        <p>{{ job.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

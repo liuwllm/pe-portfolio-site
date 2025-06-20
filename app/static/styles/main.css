@@ -96,7 +96,19 @@ body {
     font-weight: 700;
 }
 
-.about-me {
+.content {
     padding-left: 4rem;
     padding-right: 4rem;
+}
+
+.job-entry {
+    display: flex;
+}
+
+.job-picture {
+    padding: 1rem;
+}
+
+.job-info {
+    padding: 1rem;
 }
