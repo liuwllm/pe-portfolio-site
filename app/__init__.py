@@ -25,7 +25,16 @@ def index():
         }
     ]
 
-    return render_template('index.html', title="MLH Fellow", work_experience=work_experiences, url=os.getenv("URL"))
+    education = [
+        {
+            "picture": "western.jpg",
+            "name": "Western University",
+            "degree": "HBSc. in Computer Science & HBA in Business Administration",
+            "date": "Sep 2022 - Apr 2027"
+        }
+    ]
+
+    return render_template('index.html', title="William's Portfolio", work_experience=work_experiences, education=education, url=os.getenv("URL"))
 
 @app.route('/hobbies')
 def hobbies():
