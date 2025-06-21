@@ -38,4 +38,23 @@ def index():
 
 @app.route('/hobbies')
 def hobbies():
-    return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"))
+    hobbies = [
+        {
+            "picture": "gaming.jpg",
+            "title": "Gaming",
+            "description": "I'm an avid gamer who loves playing all sorts of games! I typically play a lot of multiplayer games like Valorant or Teamfight Tactics. Some other favourites include Nintendo games like Fire Emblem and Pokemon. I've also played my fair share of indie games, with some of my favourites being Hades, Celeste, and Return of the Obra Dinn.",
+        },
+        {
+            "picture": "japanese.jpg",
+            "title": "Learning Japanese",
+            "description": "I'm currently learning Japanese, mostly through immersion and flashcards (Anki).",
+        },
+        {
+            "picture": "guitar.jpg",
+            "title": "Playing Guitar",
+            "description": "I recently bought a guitar as an impulse purchase of sorts. It's been a lot of fun fiddling around with it, though, and I'm hoping to progress my way to learning full songs soon.",
+        }
+    ]
+
+
+    return render_template('hobbies.html', title="Hobbies", hobbies=hobbies, url=os.getenv("URL"))
