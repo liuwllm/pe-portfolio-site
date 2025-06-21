@@ -134,3 +134,14 @@ nav {
 .info {
     padding: 1rem;
 }
+
+.iframe-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  aspect-ratio: 2 / 1; /* Width to height = 2:1 → height = 50% of width */
+  border: none;
+}
