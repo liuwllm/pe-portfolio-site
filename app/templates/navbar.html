@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <nav>
+        <div class="nav-items">
+        {% for page in pages %}
+            <a href="{{ url_for(page.endpoint) }}" class="hover-underline-animation">{{ page.name }}</a>
+        {% endfor %}
+        </div>
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
