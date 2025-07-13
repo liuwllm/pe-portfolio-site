@@ -1,4 +1,4 @@
-p, h1, h2, h3, h4, h5, h6, button {
+p, h1, h2, h3, h4, h5, h6, button, input, textarea {
     font-family: "Manrope", sans-serif;
     color:#505050;
 }
@@ -20,6 +20,21 @@ body {
 nav {
     display: flex;
     justify-content: left;
+}
+
+button {
+    padding: 0.5rem;
+    background-color: #4b6ec8;
+    font-weight: 600;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    border: none;
+}
+
+button:hover {
+    background-color: #0087ca;
+    cursor: pointer;
 }
 
 .nav-items {
@@ -87,13 +102,13 @@ nav {
 }
 
 .profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;        
-        padding: 20px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;        
+    padding: 20px;
 }
 
 .profile .profile-picture {
@@ -136,12 +151,53 @@ nav {
 }
 
 .iframe-wrapper {
-  width: 100%;
-  position: relative;
+    width: 100%;
+    position: relative;
 }
 
 .iframe-wrapper iframe {
-  width: 100%;
-  aspect-ratio: 2 / 1; /* Width to height = 2:1 → height = 50% of width */
-  border: none;
+    width: 100%;
+    aspect-ratio: 2 / 1; /* Width to height = 2:1 → height = 50% of width */
+    border: none;
+}
+
+#timeline-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.timeline-identity {
+    display: flex;
+    gap: 1rem;
+}
+
+.timeline-input {
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    color: #6b6b6b; 
+    padding: 0.5rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.timeline-input.custom-style:focus {
+  outline: 2px solid #4b6ec8; 
+  outline-offset: 2px;
+}
+
+.timeline-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.timeline-entry {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
 }
