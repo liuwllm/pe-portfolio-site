@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
+    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <title>{{ title }}</title>
+</head>
+
+{% extends "navbar.html" %}
+{% block content %}
+<body>
+    <div class="content">
+        <div class="section">
+            <form id="timeline-form">
+                <div class="timeline-identity">
+                    <input class="timeline-input" type="text" name="name" placeholder="Name" required />
+                    <input class="timeline-input" type="text" name="email" placeholder="Email" required />
+                </div>
+                <textarea class="timeline-input" id="content" name="content" rows="10" cols="50" placeholder="Write your post here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="timeline-section">
+            <h1>Timeline Posts</h1>
+            {% for post in posts %}
+                <div class="timeline-entry">
+                    <div class="info">
+                        <h3>{{ post.name }}</h3>
+                        <h4>{{ post.email }}</h4>
+                        <p>{{ post.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+   
+
+    <script>
+        const form = document.getElementById('timelineForm')
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevents page reload
+
+            const payload = new FormData(form);
+
+            const response = await fetch('http://localhost:5000/api/timeline_post', {
+                method: 'POST',
+                body: payload
+            });
+
+            const result = await response.json();
+            console.log('Server response:', result);
+        });
+    </script>
+</body>
+{% endblock %}
+</html>

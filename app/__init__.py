@@ -35,6 +35,10 @@ PAGES = [
     {
         "name": "hobbies",
         "endpoint": "hobbies"
+    },
+    {
+        "name": "timeline",
+        "endpoint": "timeline"
     }
 ]
 
@@ -90,6 +94,12 @@ def hobbies():
 
 
     return render_template('hobbies.html', title="Hobbies", hobbies=hobbies, url=os.getenv("URL"), pages=PAGES)
+
+@app.route('/timeline')
+def timeline():
+    posts = [model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())]
+
+    return render_template('timeline.html', title='Timeline', url=os.getenv("URL"), pages=PAGES, posts=posts)
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
