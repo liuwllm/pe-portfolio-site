@@ -52,7 +52,7 @@
 
             const payload = new FormData(form);
 
-            const response = await fetch('http://localhost:5000/api/timeline_post', {
+            const response = await fetch('http://{{ url }}/api/timeline_post', {
                 method: 'POST',
                 body: payload
             });
