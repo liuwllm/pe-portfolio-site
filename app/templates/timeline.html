@@ -45,9 +45,8 @@
         </div>
     </div>
    
-
     <script>
-        const form = document.getElementById('timelineForm')
+        const form = document.getElementById('timeline-form')
         form.addEventListener('submit', async (e) => {
             e.preventDefault(); // Prevents page reload
 
@@ -60,6 +59,7 @@
 
             const result = await response.json();
             console.log('Server response:', result);
+            window.location.href = window.location.pathname + '?cache_bust=' + Date.now();
         });
     </script>
 </body>
