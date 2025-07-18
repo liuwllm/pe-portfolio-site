@@ -75,7 +75,7 @@ def index():
         }
     ]
 
-    return render_template('index.html', title="William's Portfolio", work_experience=work_experiences, education=education, url=os.getenv("URL"), pages=PAGES)
+    return render_template('index.html', title="MLH Fellow", work_experience=work_experiences, education=education, url=os.getenv("URL"), pages=PAGES)
 
 @app.route('/hobbies')
 def hobbies():
