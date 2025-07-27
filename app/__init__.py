@@ -104,7 +104,7 @@ def hobbies():
 def timeline():
     posts = [model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())]
 
-    return render_template('timeline.html', title='Timeline', url=os.getenv("URL"), pages=PAGES, posts=posts)
+    return render_template('timeline.html', title='Timeline', url=os.getenv("URL"), reload_url=os.getenv("RELOAD_URL"), pages=PAGES, posts=posts)
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
