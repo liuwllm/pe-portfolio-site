@@ -46,13 +46,16 @@
     </div>
    
     <script>
-        const form = document.getElementById('timeline-form')
+	console.log('Script loaded');
+        const form = document.getElementById('timeline-form');
+        console.log('Form found:', form);
+        
         form.addEventListener('submit', async (e) => {
             e.preventDefault(); // Prevents page reload
 
             const payload = new FormData(form);
 
-            const response = await fetch('http://{{ url }}/api/timeline_post', {
+            const response = await fetch('/api/timeline_post', {
                 method: 'POST',
                 body: payload
             });
